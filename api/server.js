@@ -1,10 +1,13 @@
 const express = require('express')
 const userRouter = require('./user-router')
+const cors = require('cors')
 
 
 const server = express()
 
 server.use(express.json())
+
+server.use(cors())
 
 server.use('/api', userRouter)
 
@@ -12,7 +15,7 @@ require('dotenv').config()
 
 const path = require('path')
 
-server.use(express.static(path.join(__dirname, "/build")))
+// server.use(express.static(path.join(__dirname, "/build")))
 
 
 
