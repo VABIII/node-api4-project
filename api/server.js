@@ -12,7 +12,7 @@ require('dotenv').config()
 
 const path = require('path')
 
-server.use(express.static(path.join(__dirname, "client/build")))
+server.use(express.static(path.join(__dirname, "/build")))
 
 
 

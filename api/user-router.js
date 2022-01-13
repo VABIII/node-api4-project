@@ -9,17 +9,17 @@ const users = [
 ]
 
 router.get('/users', (req, res, next) => {
-    res.send(users)
+    res.json(users)
 })
 
 router.post('/register', (req, res, next) => {
     const username = req.body.username
-    res.send(username)
+    res.json(username)
 })
 
 router.post('/login', (req, res, next) => {
     if(!req.body.username || !req.body.password) {
-        res.status(400).send({
+        res.status(400).json({
             message: "Please provide a username and password"
         })
     }
